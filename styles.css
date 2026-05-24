@@ -30,7 +30,7 @@ body {
 .resume__container {
     display: flex;
     gap: 40px;
-    padding: 0 30px;
+    padding: 0 15px;
 }
 
 .resume__sidebar {
@@ -135,6 +135,7 @@ body {
 .contact-info__avatar {
     border-radius: 16px;
     width: 100%;
+    max-width: 400px;
     object-fit: cover;
     border: 4px solid var(--text-decoration-color);
     margin-bottom: 20px;
@@ -184,30 +185,45 @@ body {
 
 .skills-list {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
 }
 
 .skill-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    /*gap: 10px;*/
+    background-color: var(--bg-white);
+    border: 2px solid var(--text-decoration-color);
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.3s ease;
+    flex: 0 1 auto; /* Hug content */
+    min-width: 110px;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 154, 0, 0.2);
 }
 
 .skill-item__name {
-    color: var(--secondary-text-color);
-    font-size: 0.9rem;
+    color: var(--primary-text-color);
+    font-size: 0.85rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .skill-item__levels {
     display: flex;
-    gap: 5px;
+    gap: 4px;
+    width: 100%;
 }
 
 .skill-item__segment {
     flex: 1;
-    height: 8px;
+    height: 5px;
     background-color: #e0e0e0;
     border-radius: 2px;
 }
@@ -339,10 +355,9 @@ body {
 .accordion-header__subtitle {
     font-size: 0.95rem;
     color: var(--secondary-text-color);
-
 }
 
-.blur{
+.accordion-header__subtitle--blurred {
     filter: blur(4px);
     transition: filter 0.3s ease;
 }
